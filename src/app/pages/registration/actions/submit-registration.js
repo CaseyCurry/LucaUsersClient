@@ -10,7 +10,7 @@ const action = (api) => {
           }, {
             validateStatus: (status) => {
               console.log(status);
-              return status == 200 || status == 409;
+              return status == 201 || status == 409;
             }
           });
         })
