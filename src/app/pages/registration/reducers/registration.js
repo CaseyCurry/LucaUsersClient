@@ -46,7 +46,7 @@ const registration = (state = initialState, action) => {
       });
     case `${submitRegistrationActionName}_FULFILLED`:
       switch (action.payload.status) {
-        case 200:
+        case 201:
           return Object.assign({}, state, initialState, {
             token: action.payload.data
           });
