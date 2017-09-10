@@ -27,7 +27,7 @@
           }]
         },
         "Services": [{
-          "Id": "",
+          "Id": "/client/users",
           "Name": "users-client",
           "Tags": [
             "luca",
