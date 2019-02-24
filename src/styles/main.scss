@@ -1,0 +1,69 @@
+@import "variables";
+
+@mixin call-to-action($lighten-background: false) {
+  @if $lighten-background==true {
+    background-color: mix(white, $call-to-action-color, 20%) !important;
+  } @else {
+    background-color: $call-to-action-color !important;
+  }
+
+  color: $call-to-action-font-color !important;
+  font-weight: bold;
+}
+
+@mixin error() {
+  &.error {
+    outline: none;
+    border: solid $border-width red;
+    box-shadow: 0 0 5px red;
+  }
+}
+
+html,
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+#users {
+  > div {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+
+    > div {
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  font-family: $primary_font-family;
+  font-size: $primary-font-size;
+  color: $primary-font-color;
+  background-color: $primary-background-color;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: auto;
+
+  input {
+    border: solid 1px $low-contrast-border-color;
+    color: $primary-font-color;
+    padding-left: $control-margin/2;
+    padding-right: $control-margin/2;
+
+    @include error();
+  }
+
+  // controls
+  @import "../controls/Loader";
+  @import "../controls/Button";
+
+  // components
+  @import "../components/notifications/components/Notifications";
+
+  // pages
+  // @import "../pages/login/Login";
+  // @import "../pages/register/Register";
+}
